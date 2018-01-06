@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="QuadtreeTest.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Quadtree\Quadtree.cpp">
+      <Filter>Quadtree</Filter>
+    </ClCompile>
+    <ClCompile Include="Quadtree\QuadtreeNode.cpp">
+      <Filter>Quadtree</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Quadtree\IQuadtreeObject.h">
+      <Filter>Quadtree</Filter>
+    </ClInclude>
+    <ClInclude Include="Quadtree\Quadtree.h">
+      <Filter>Quadtree</Filter>
+    </ClInclude>
+    <ClInclude Include="Quadtree\QuadtreeNode.h">
+      <Filter>Quadtree</Filter>
+    </ClInclude>
+    <ClInclude Include="Quadtree\QuadtreeRect.h">
+      <Filter>Quadtree</Filter>
+    </ClInclude>
+    <ClInclude Include="Quadtree\QuadtreePoint.h">
+      <Filter>Quadtree</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Quadtree">
+      <UniqueIdentifier>{7dbea010-0253-41f9-9248-c6974297b109}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
