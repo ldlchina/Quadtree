@@ -1,4 +1,5 @@
-﻿#include "../stdafx.h"
+﻿// author: ldlchina
+#include "../stdafx.h"
 #include "QuadtreeNode.h"
 
 #include "IQuadtreeObject.h"

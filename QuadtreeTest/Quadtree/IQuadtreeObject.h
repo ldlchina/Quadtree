@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿// author: ldlchina
+#pragma once
 
 #include "QuadtreeRect.h"
 

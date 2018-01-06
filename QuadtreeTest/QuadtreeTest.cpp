@@ -1,5 +1,4 @@
-// QuadtreeTest.cpp : 定义控制台应用程序的入口点。
-//
+// author: ldlchina@163.com
 
 #include "stdafx.h"
 
@@ -33,7 +32,7 @@ int main()
 	std::default_random_engine e;
 	std::uniform_int_distribution<> dis(0, n);
 
-	// 在0~n之间随机创建n个QuadtreeRect
+	// 锟斤拷0~n之锟斤拷锟斤拷锟斤拷锟斤拷锟絥锟斤拷QuadtreeRect
 	for (int i = 0; i < n; i++)
 	{
 		int minX = dis(e);
@@ -50,10 +49,10 @@ int main()
 		rects.emplace_back(new QuadtreeRect(minX, minY, maxX, maxY));
 	}
 
-	// 用n*n平面范围内随机一点查找包含该点的QuadtreeRect对象。
+	// 锟斤拷n*n平锟芥范围锟斤拷锟斤拷锟揭伙拷锟斤拷锟揭帮拷锟斤拷锟矫碉拷锟絈uadtreeRect锟斤拷锟斤拷
 	QuadtreePoint pt(rand() % n, rand() % n);
 
-	// 不使用八叉树
+	// 锟斤拷使锟矫八诧拷锟斤拷
 	std::vector<const QuadtreeRect*> results0;
 	results0.reserve(rects.size());
 	for (const auto& rect : rects)
@@ -64,7 +63,7 @@ int main()
 		}
 	}
 
-	// 使用四叉树
+	// 使锟斤拷锟侥诧拷锟斤拷
 	std::unique_ptr<Quadtree> quadtree(Quadtree::create(QuadtreeRect(0, 0, n, n)));
 	for (const auto& rect : rects)
 	{
