@@ -1,5 +1,7 @@
 # Prerequisites
 *.d
+*.db
+*.opendb
 
 # Compiled Object files
 *.slo
@@ -30,3 +32,6 @@
 *.exe
 *.out
 *.app
+
+# Ignored folders
+x64
