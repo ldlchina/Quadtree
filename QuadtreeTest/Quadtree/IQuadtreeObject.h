@@ -12,5 +12,3 @@ public:
 
 	virtual QuadtreeRect rect() const = 0;
 };
-
-

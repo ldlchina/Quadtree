@@ -1,4 +1,4 @@
-// author: ldlchina@163.com
+// author: ldlchina
 
 #include "stdafx.h"
 
@@ -32,7 +32,6 @@ int main()
 	std::default_random_engine e;
 	std::uniform_int_distribution<> dis(0, n);
 
-	// ��0~n֮���������n��QuadtreeRect
 	for (int i = 0; i < n; i++)
 	{
 		int minX = dis(e);
@@ -49,10 +48,8 @@ int main()
 		rects.emplace_back(new QuadtreeRect(minX, minY, maxX, maxY));
 	}
 
-	// ��n*nƽ�淶Χ�����һ����Ұ����õ��QuadtreeRect����
 	QuadtreePoint pt(rand() % n, rand() % n);
 
-	// ��ʹ�ð˲���
 	std::vector<const QuadtreeRect*> results0;
 	results0.reserve(rects.size());
 	for (const auto& rect : rects)
@@ -63,7 +60,6 @@ int main()
 		}
 	}
 
-	// ʹ���Ĳ���
 	std::unique_ptr<Quadtree> quadtree(Quadtree::create(QuadtreeRect(0, 0, n, n)));
 	for (const auto& rect : rects)
 	{
@@ -80,6 +76,6 @@ int main()
 		if(rectObj->object()->contain(pt))
 			results1.emplace_back(rectObj->object());
 	}
-    return 0;
+ return 0;
 }
 

@@ -6,11 +6,11 @@
 #include "QuadtreeNode.h"
 
 
-Quadtree::Quadtree( const QuadtreeRect& rootRect, size_t maxObjects /*= 128*/, size_t maxLevels /*= 5*/ ) :
-    maxObjects_(maxObjects),
-    maxLevels_(maxLevels)
+Quadtree::Quadtree(const QuadtreeRect& rootRect, size_t maxObjects /*= 128*/, size_t maxLevels /*= 5*/) :
+	maxObjects_(maxObjects),
+	maxLevels_(maxLevels)
 {
-    root_.reset(new QuadtreeNode(this, rootRect, 0));
+	root_.reset(new QuadtreeNode(this, rootRect, 0));
 }
 
 Quadtree::~Quadtree()
@@ -18,30 +18,30 @@ Quadtree::~Quadtree()
 
 }
 
-Quadtree* Quadtree::create( const QuadtreeRect& rootRect, size_t maxObjects /*= 128*/, size_t maxLevels /*= 5*/ )
+Quadtree* Quadtree::create(const QuadtreeRect& rootRect, size_t maxObjects /*= 128*/, size_t maxLevels /*= 5*/)
 {
 	if (!rootRect.notEmpty())
 		return nullptr;
 
-    return new Quadtree(rootRect, maxObjects, maxLevels);
+	return new Quadtree(rootRect, maxObjects, maxLevels);
 }
 
-void Quadtree::insert(std::unique_ptr<IQuadtreeObject> object )
+void Quadtree::insert(std::unique_ptr<IQuadtreeObject> object)
 {
-    root_->insert(std::move(object));
+	root_->insert(std::move(object));
 }
 
 std::vector<const IQuadtreeObject*> Quadtree::findByPoint(const QuadtreePoint& point) const
 {
-    return root_->findByPoint(point);
+	return root_->findByPoint(point);
 }
 
-std::vector<const IQuadtreeObject*> Quadtree::findByRect( const QuadtreeRect& rect ) const
+std::vector<const IQuadtreeObject*> Quadtree::findByRect(const QuadtreeRect& rect) const
 {
-    return root_->findByRect(rect);
+	return root_->findByRect(rect);
 }
 
 size_t Quadtree::getTotalObjectCount() const
 {
-    return root_->getTotalObjectCount();
+	return root_->getTotalObjectCount();
 }
